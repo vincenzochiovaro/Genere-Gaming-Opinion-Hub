@@ -1,3 +1,105 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
+.error {
+  margin-top: 50px;
+  text-align: center;
+  color: rgb(255, 0, 0);
+  font-size: 50px;
+}
+/* Header  */
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #333;
+  padding: 15px;
+}
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+/* Header  */
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+.fa-house {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  padding-right: 10px;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  nav a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Navbar */
+
+/* ReeviewHub */
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 380px;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.review-card img {
+  width: 80%;
+  height: 200px;
+  margin: 20px auto;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.review-card p {
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* ReeviewHub */
