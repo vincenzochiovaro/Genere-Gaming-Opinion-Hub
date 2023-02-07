@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchReviewById } from "../api";
+import { fetchCommentsByReviewId, fetchReviewById } from "../api";
 import AddComment from "./AddComment";
 import ReviewDetails from "./ReviewDetails";
 
 const PostReview = () => {
   const [singleReview, setSingleReview] = useState([]);
+  const [comments, setComments] = useState([]);
   const { review_id } = useParams();
 
   useEffect(() => {
-    fetchReviewById(review_id).then(({ data }) => {
-      setSingleReview(data);
+    Promise.all([
+      fetchReviewById(review_id),
+      fetchCommentsByReviewId(review_id),
+    ]).then((results) => {
+      setSingleReview(results[0].data);
+      setComments(results[1].data);
     });
   }, [review_id]);
 
@@ -21,7 +26,7 @@ const PostReview = () => {
       </section>
 
       <section>
-        <AddComment />
+        <AddComment comments={comments} />
       </section>
     </>
   );

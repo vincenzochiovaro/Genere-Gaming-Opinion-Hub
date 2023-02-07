@@ -11,3 +11,9 @@ export const fetchReviewById = (review_id) => {
     `https://vincenzos-back-end-project.onrender.com/api/reviews/${review_id}`
   );
 };
+
+export const fetchCommentsByReviewId = (review_id) => {
+  return axios.get(
+    `https://vincenzos-back-end-project.onrender.com/api/reviews/${review_id}/comments`
+  );
+};
