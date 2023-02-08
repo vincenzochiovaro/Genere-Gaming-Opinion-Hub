@@ -1,7 +1,7 @@
 const ReviewDetails = ({ singleReview }) => {
   return singleReview.map((review) => {
     return (
-      <article className="review">
+      <article key={review.review_id} className="review">
         <h3 className="review__title">{review.title}</h3>
         <img
           className="review__image"
