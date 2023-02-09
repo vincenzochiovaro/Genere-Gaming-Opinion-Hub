@@ -8,17 +8,27 @@ const PostReview = () => {
   const [singleReview, setSingleReview] = useState([]);
   const [comments, setComments] = useState([]);
   const { review_id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     Promise.all([
       fetchReviewById(review_id),
       fetchCommentsByReviewId(review_id),
     ]).then((results) => {
       setSingleReview(results[0].data);
       setComments(results[1].data);
+      setIsLoading(false);
     });
   }, [review_id]);
 
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <p>LOADING...</p>
+      </div>
+    );
+  }
   return (
     <>
       <section>

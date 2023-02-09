@@ -5,14 +5,14 @@ import { insertComment } from "../api";
 const AddComment = ({ setComments, comments, userNameReview }) => {
   const reviewId = comments.map((comment) => comment.review_id)[0];
   const [textComment, setTextComment] = useState("");
-  const [isCommentAdded, setIsCommentAdded] = useState(true);
+  const [isCommentAdded, setIsCommentAdded] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     insertComment(reviewId, userNameReview, textComment).then(
       (commentFromApi) => {
         setComments((currentComments) => [commentFromApi, ...currentComments]);
-        setIsCommentAdded(false);
+        setIsCommentAdded(true);
       }
     );
     setTextComment("");
@@ -22,6 +22,8 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
     <section className="comments">
       <form onSubmit={handleSubmit}>
         {isCommentAdded ? (
+          <p className="add__comment__message">Thanks for posting</p>
+        ) : (
           <textarea
             type="text"
             placeholder="Please insert at least 5 characters"
@@ -30,8 +32,6 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
               setTextComment(e.target.value);
             }}
           ></textarea>
-        ) : (
-          <p className="add__comment__message">Thanks for posting</p>
         )}
 
         <button disabled={textComment.length < 5} className="btn add__comment">

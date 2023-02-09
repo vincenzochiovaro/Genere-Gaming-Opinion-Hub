@@ -11,6 +11,14 @@
   color: rgb(255, 0, 0);
   font-size: 50px;
 }
+
+.loading {
+  text-align: center;
+  color: #333;
+  font-size: 50px;
+  padding: 50px;
+  margin: 50px;
+}
 /* Header  */
 h1 {
   text-align: center;
