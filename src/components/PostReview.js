@@ -26,7 +26,11 @@ const PostReview = () => {
       </section>
 
       <section>
-        <AddComment comments={comments} />
+        <AddComment
+          setComments={setComments}
+          comments={comments}
+          userNameReview={singleReview.map((review) => review.owner)[0]}
+        />
       </section>
     </>
   );

@@ -216,3 +216,64 @@ nav a:hover {
 }
 
 /* updateVote */
+
+/* form textarea */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-bottom: 1rem;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ccc;
+}
+
+textarea {
+  padding: 0.5rem;
+
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+}
+textarea::placeholder {
+  font-size: 1.2rem;
+  color: rgb(56, 51, 51);
+}
+
+.add__comment {
+  padding: 0.6rem;
+  background-color: #333;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.add__comment[disabled] {
+  cursor: not-allowed;
+}
+
+.add__comment:hover {
+  background-color: #57574c;
+}
+.add__comment:active {
+  background-color: #333;
+}
+.add__comment__message {
+  text-align: center;
+  font-size: 2rem;
+  margin: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 1000px) {
+  form {
+    width: 80%;
+  }
+}
+
+/* form textarea */

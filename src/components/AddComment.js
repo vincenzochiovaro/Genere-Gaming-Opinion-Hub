@@ -1,12 +1,46 @@
 import dayjs from "dayjs";
+import { useState } from "react";
+import { insertComment } from "../api";
 
-const AddComment = ({ comments }) => {
-  const date = dayjs(comments.created_at).format("DD-MM-YYYY");
+const AddComment = ({ setComments, comments, userNameReview }) => {
+  const reviewId = comments.map((comment) => comment.review_id)[0];
+  const [textComment, setTextComment] = useState("");
+  const [isCommentAdded, setIsCommentAdded] = useState(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    insertComment(reviewId, userNameReview, textComment).then(
+      (commentFromApi) => {
+        setComments((currentComments) => [commentFromApi, ...currentComments]);
+        setIsCommentAdded(false);
+      }
+    );
+    setTextComment("");
+  };
+
   return (
     <section className="comments">
-      <textarea></textarea>
-      <button>ADD COMMENT</button>
+      <form onSubmit={handleSubmit}>
+        {isCommentAdded ? (
+          <textarea
+            type="text"
+            placeholder="Please insert at least 5 characters"
+            value={textComment}
+            onChange={(e) => {
+              setTextComment(e.target.value);
+            }}
+          ></textarea>
+        ) : (
+          <p className="add__comment__message">Thanks for posting</p>
+        )}
+
+        <button disabled={textComment.length < 5} className="btn add__comment">
+          ADD COMMENT
+        </button>
+      </form>
+
       {comments.map((comment) => {
+        const date = dayjs(comments.created_at).format("DD-MM-YYYY");
         return (
           <article className="comment" key={comment.comment_id}>
             <p className="comment__body">{comment.body}</p>
