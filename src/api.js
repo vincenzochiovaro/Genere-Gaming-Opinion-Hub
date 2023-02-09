@@ -17,3 +17,11 @@ export const fetchCommentsByReviewId = (review_id) => {
     `https://vincenzos-back-end-project.onrender.com/api/reviews/${review_id}/comments`
   );
 };
+
+export const updateVote = (revieId, vote) => {
+  const patchBody = { inc_votes: vote };
+  return axios.patch(
+    `https://vincenzos-back-end-project.onrender.com/api/reviews/${revieId}`,
+    patchBody
+  );
+};

@@ -176,3 +176,43 @@ nav a:hover {
   font-weight: bold;
 }
 /*Comments */
+
+/* updateVote */
+.vote-section {
+  display: flex;
+  align-items: center;
+}
+
+.vote-count {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.vote-button {
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.vote-button i {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.like-button {
+  color: green;
+}
+
+.dislike-button {
+  color: #e60000;
+}
+
+.vote-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* updateVote */
