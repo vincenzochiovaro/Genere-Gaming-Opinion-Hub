@@ -40,7 +40,7 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
       </form>
 
       {comments.map((comment) => {
-        const date = dayjs(comments.created_at).format("DD-MM-YYYY");
+        const date = dayjs(comment.created_at).format("DD-MM-YYYY");
         return (
           <article className="comment" key={comment.comment_id}>
             <p className="comment__body">{comment.body}</p>
