@@ -17,7 +17,10 @@ const ReviewsHub = () => {
   if (isLoading) {
     return (
       <div className="loading">
-        <p>LOADING...</p>
+        <i className="fas fa-spinner fa-spin"></i>
+        <p className="spinner__message">
+          Please wait while our page is loading...
+        </p>
       </div>
     );
   }
