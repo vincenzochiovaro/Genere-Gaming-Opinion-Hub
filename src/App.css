@@ -11,6 +11,24 @@
   color: rgb(255, 0, 0);
   font-size: 50px;
 }
+
+/* loading spinner */
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.loading i {
+  font-size: 50px;
+  color: #008080;
+}
+.spinner__message {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+/* loading spinner */
+
 /* Header  */
 h1 {
   text-align: center;

@@ -5,12 +5,25 @@ import { fetchReviews } from "../api";
 const ReviewsHub = () => {
   const [reviews, setReviews] = useState([]);
   const { category } = useParams();
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
     fetchReviews().then(({ data }) => {
       setReviews(data);
+      setIsLoading(false);
     });
   }, [category]);
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <i className="fas fa-spinner fa-spin"></i>
+        <p className="spinner__message">
+          Please wait while our page is loading...
+        </p>
+      </div>
+    );
+  }
 
   if (!category) {
     {
