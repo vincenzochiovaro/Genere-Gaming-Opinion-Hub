@@ -9,7 +9,6 @@ const ReviewDetails = ({ singleReview }) => {
       return currChange + 1;
     });
     //request
-
     updateVote(reviewId, 1);
   };
   const decVote = () => {
@@ -28,6 +27,7 @@ const ReviewDetails = ({ singleReview }) => {
           alt={review.title}
           src={review.review_img_url}
         />
+        <p className="review__body">{review.review_body}</p>
         <section className="vote-section">
           <p className="vote-count">Votes: {review.votes + voteChange}</p>
           <button

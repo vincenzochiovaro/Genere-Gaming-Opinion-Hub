@@ -25,3 +25,15 @@ export const updateVote = (revieId, vote) => {
     patchBody
   );
 };
+
+export const insertComment = (reviewId, userNameReview, textComment) => {
+  const postBody = { username: `${userNameReview}`, body: `${textComment}` };
+  return axios
+    .post(
+      `https://vincenzos-back-end-project.onrender.com/api/reviews/${reviewId}/comments`,
+      postBody
+    )
+    .then(({ data }) => {
+      return data;
+    });
+};
