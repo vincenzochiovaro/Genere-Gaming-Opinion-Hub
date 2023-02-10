@@ -11,7 +11,7 @@ Welcome to the Genre Gaming Opinion Hub! This project connects to my back-end AP
 # Deployment
 
 - This website is deployed on Netlify
-- Live-Demo:
+- Live-Demo: https://nimble-crisp-01d1d2.netlify.app
 
 # Technologies Used
 
