@@ -38,7 +38,6 @@ export const insertComment = (reviewId, userNameReview, textComment) => {
     });
 };
 {
-  /* addedd this */
 }
 export const deleteComment = (commentId) => {
   return axios.delete(
@@ -46,5 +45,4 @@ export const deleteComment = (commentId) => {
   );
 };
 {
-  /* addedd this */
 }

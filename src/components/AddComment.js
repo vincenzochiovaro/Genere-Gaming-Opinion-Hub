@@ -1,24 +1,28 @@
 import dayjs from "dayjs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { insertComment } from "../api";
 import { deleteComment } from "../api";
+import { Link } from "react-router-dom";
 const AddComment = ({ setComments, comments, userNameReview }) => {
   const reviewId = comments.map((comment) => comment.review_id)[0];
   const [textComment, setTextComment] = useState("");
   const [isCommentAdded, setIsCommentAdded] = useState(false);
   const [isCommentDeleted, setIsCommentDeleted] = useState(false);
+  const [err, setErr] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    insertComment(reviewId, userNameReview, textComment).then(
-      (commentFromApi) => {
+    insertComment(reviewId, userNameReview, textComment)
+      .then((commentFromApi) => {
         setComments((currentComments) => [commentFromApi, ...currentComments]);
         setIsCommentAdded(true);
-      }
-    );
+      })
+      .catch((err) => {
+        setErr(err);
+      });
     setTextComment("");
   };
-  //added this
+
   const removeComment = (commentId) => {
     deleteComment(commentId).then(() => {
       setComments(
@@ -27,8 +31,15 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
       setIsCommentDeleted(true);
     });
   };
-  //added this
-
+  if (err) {
+    return (
+      <section className="error__container__comment">
+        <Link className="error__add__comment" to="/">
+          There has been an error. Click here to Go back to the HomePage.
+        </Link>
+      </section>
+    );
+  }
   return (
     <section className="comments">
       <form onSubmit={handleSubmit}>
@@ -49,6 +60,7 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
           ADD COMMENT
         </button>
       </form>
+
       {/* deleteComment message*/}
       {isCommentDeleted ? (
         <div className="delete__comment__message">
@@ -72,7 +84,6 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
             <p className="comment__info">
               Created at: {date} by {comment.author}
             </p>
-            {/* addedd this */}
 
             {userNameReview === comment.author ? (
               <button
@@ -89,7 +100,6 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
             ) : (
               <p></p>
             )}
-            {/* addedd this */}
           </article>
         );
       })}

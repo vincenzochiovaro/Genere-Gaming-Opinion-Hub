@@ -6,13 +6,26 @@ const ReviewsHub = () => {
   const [reviews, setReviews] = useState([]);
   const { category } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(null);
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews().then(({ data }) => {
-      setReviews(data);
-      setIsLoading(false);
-    });
+    fetchReviews()
+      .then(({ data }) => {
+        setReviews(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setErr(err);
+      });
   }, [category]);
+
+  if (err) {
+    return (
+      <section className="error__container__comment">
+        <h2 className="error__add__comment">Server down try again later.</h2>
+      </section>
+    );
+  }
 
   if (isLoading) {
     return (

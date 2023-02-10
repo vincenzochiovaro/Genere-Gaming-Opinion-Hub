@@ -329,3 +329,14 @@ textarea::placeholder {
   margin-left: 5px;
 }
 /* delete button/comment */
+
+/* error handling */
+.error__container__comment {
+  display: flex;
+  justify-content: center;
+}
+.error__add__comment {
+  color: red;
+  font-size: 50px;
+}
+/* error handling */
