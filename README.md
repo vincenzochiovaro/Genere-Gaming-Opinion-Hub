@@ -1,6 +1,17 @@
 # Genre Gaming Opinion Hub
 
-Welcome to the Genre Gaming Opinion Hub! This project connects to a back-end API (https://github.com/vincenzochiovaro/Project-NC-Games) to fetch data containing images of games with different categories like dexterity games, strategy, etc. Each game is presented in a card where you can click and display a review along with its list of comments. Users have the option to leave a comment, remove a comment, or like/dislike a review.
+Welcome to the Genre Gaming Opinion Hub! This project connects to my back-end API (https://github.com/vincenzochiovaro/Project-NC-Games) to fetch data containing images of games with different categories like dexterity games, strategy, etc. Each game is presented in a card where you can click and display a review along with its list of comments. Users have the option to leave a comment, remove a comment, or like/dislike a review.
+
+# Installation
+
+1. Clone the repository
+2. Navigate to the cloned repository and install the dependencies: - npm install
+3. Start the development server: - npm start
+
+# Deployment
+
+- This website is deployed on Netlify
+- Live-Demo:
 
 # Technologies Used
 

@@ -74,8 +74,6 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
       {/* deleteComment message*/}
 
       {comments.map((comment) => {
-        {
-        }
         const date = dayjs(comment.created_at).format("DD-MM-YYYY");
 
         return (
@@ -89,9 +87,7 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
               <button
                 className="delete-button"
                 onClick={() => {
-                  {
-                    removeComment(comment.comment_id);
-                  }
+                  removeComment(comment.comment_id);
                 }}
               >
                 DELETE
