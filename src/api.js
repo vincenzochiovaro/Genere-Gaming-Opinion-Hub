@@ -37,9 +37,14 @@ export const insertComment = (reviewId, userNameReview, textComment) => {
       return data;
     });
 };
-
+{
+  /* addedd this */
+}
 export const deleteComment = (commentId) => {
-  axios.delete(
+  return axios.delete(
     `https://vincenzos-back-end-project.onrender.com/api/comments/${commentId}`
   );
 };
+{
+  /* addedd this */
+}

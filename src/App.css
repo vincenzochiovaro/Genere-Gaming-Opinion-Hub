@@ -295,3 +295,37 @@ textarea::placeholder {
 }
 
 /* form textarea */
+
+/* delete button /comment*/
+.delete-button {
+  background-color: #ad0000;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+.delete__comment__message {
+  background-color: #ad0000;
+  color: #fff;
+  border-radius: 20px;
+  width: 20%;
+  text-align: center;
+  margin: 20px;
+  padding: 2px;
+}
+.fa-trash-alt {
+  color: #ffffff;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+.fa-square-check {
+  margin-left: 5px;
+}
+/* delete button/comment */
