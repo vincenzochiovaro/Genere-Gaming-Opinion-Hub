@@ -39,27 +39,25 @@ const ReviewsHub = () => {
   }
 
   if (!category) {
-    {
-      return (
-        <section className="reviews-container">
-          {reviews.map((review) => (
-            <article key={review.review_id} className="review-card">
-              <Link to={`/addReview/${review.review_id}`}>
-                <img
-                  id={review.review_id}
-                  alt={review.title}
-                  src={review.review_img_url}
-                />
-              </Link>
+    return (
+      <section className="reviews-container">
+        {reviews.map((review) => (
+          <article key={review.review_id} className="review-card">
+            <Link to={`/addReview/${review.review_id}`}>
+              <img
+                id={review.review_id}
+                alt={review.title}
+                src={review.review_img_url}
+              />
+            </Link>
 
-              <h2 className="card__title">{review.title}</h2>
-              <p className="card__genre">Genre: {review.category}</p>
-              <p className="card__author">By: {review.owner}</p>
-            </article>
-          ))}
-        </section>
-      );
-    }
+            <h2 className="card__title">{review.title}</h2>
+            <p className="card__genre">Genre: {review.category}</p>
+            <p className="card__author">By: {review.owner}</p>
+          </article>
+        ))}
+      </section>
+    );
   } else {
     {
       return (
