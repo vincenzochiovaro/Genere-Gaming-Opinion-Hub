@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useState } from "react";
 import { insertComment } from "../api";
-
+import { deleteComment } from "../api";
 const AddComment = ({ setComments, comments, userNameReview }) => {
   const reviewId = comments.map((comment) => comment.review_id)[0];
   const [textComment, setTextComment] = useState("");
@@ -16,6 +16,10 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
       }
     );
     setTextComment("");
+  };
+
+  const removeComment = (commentId) => {
+    deleteComment(commentId);
   };
 
   return (
@@ -40,6 +44,8 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
       </form>
 
       {comments.map((comment) => {
+        {
+        }
         const date = dayjs(comment.created_at).format("DD-MM-YYYY");
         return (
           <article className="comment" key={comment.comment_id}>
@@ -47,6 +53,20 @@ const AddComment = ({ setComments, comments, userNameReview }) => {
             <p className="comment__info">
               Created at: {date} by {comment.author}
             </p>
+
+            {userNameReview === comment.author ? (
+              <button
+                onClick={() => {
+                  {
+                    removeComment(comment.comment_id);
+                  }
+                }}
+              >
+                DELETE
+              </button>
+            ) : (
+              <p></p>
+            )}
           </article>
         );
       })}
