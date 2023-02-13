@@ -1,4 +1,4 @@
-# Genre Gaming Opinion Hub
+# Genre Gaming Opinion Hub ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 Welcome to the Genre Gaming Opinion Hub! This project connects to my back-end API (https://github.com/vincenzochiovaro/Project-NC-Games) to fetch data containing images of games with different categories like dexterity games, strategy, etc. Each game is presented in a card where you can click and display a review along with its list of comments. Users have the option to leave a comment, remove a comment, or like/dislike a review.
 
