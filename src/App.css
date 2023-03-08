@@ -92,7 +92,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 380px;
+  height: 400px;
   margin: 20px;
   text-align: center;
   border: 1px solid #ccc;
@@ -116,7 +116,7 @@ nav a:hover {
 
 .review-card p {
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 5px;
 }
 
