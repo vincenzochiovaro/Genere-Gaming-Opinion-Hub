@@ -72,7 +72,7 @@ const ReviewsHub = () => {
                   src={review.review_img_url}
                 />
               </Link>
-              <h2>{review.title}</h2>
+              <h2 className="card__title">{review.title}</h2>
               <p>Genre: {review.category}</p>
               <p>By: {review.owner}</p>
             </article>

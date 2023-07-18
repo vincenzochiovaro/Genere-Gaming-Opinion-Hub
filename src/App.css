@@ -44,10 +44,25 @@ h1 {
 /* Header  */
 
 /* Navbar */
+
+.navbar__container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #333;
+  padding: 10px;
+  margin: -10px;
+}
+
+h1 {
+  color: white;
+  font-size: 24px;
+}
+
 nav {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -69,23 +84,86 @@ nav a:hover {
 }
 
 @media (max-width: 1000px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
+  h1 {
+    font-size: 20px;
   }
-  nav a {
-    font-size: 14px;
-    padding: 10px;
+
+  nav {
+    justify-content: center;
   }
 }
-
 /* Navbar */
+
+/* hamburger menu */
+.navbar__toggle {
+  background-color: red;
+  font-size: 200px;
+}
+
+.navbar__toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar__toggle-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin-bottom: 5px;
+}
+
+.navbar__toggle.active .navbar__toggle-icon:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+.navbar__toggle.active .navbar__toggle-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.active .navbar__toggle-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.navbar__collapse {
+  transition: height 0.3s ease-in-out;
+  height: 10px;
+}
+
+.navbar__collapse.show {
+  height: auto;
+}
+.navbar__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar__nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar__nav a:hover {
+  color: #555;
+}
+
+/* hamburger menu */
 
 /* ReeviewHub */
 .reviews-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 10px;
+}
+
+.card__title {
+  font-size: 25px;
 }
 
 .review-card {
@@ -116,8 +194,8 @@ nav a:hover {
 
 .review-card p {
   font-weight: bold;
+  font-size: 15px;
   margin-top: 5px;
-  padding: 5px;
 }
 
 /* ReeviewHub */
