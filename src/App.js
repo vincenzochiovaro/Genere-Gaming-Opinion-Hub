@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import PostReview from "./components/PostReview";
 import ReviewsHub from "./components/ReviewsHub";
-import { Navbar } from "react-bootstrap";
 import NavigationBar from "./components/NavigationBar";
 import Header from "./components/Header";
 function App() {
